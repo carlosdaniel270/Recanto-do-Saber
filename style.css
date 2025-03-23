@@ -1,0 +1,171 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo do site */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #0277bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animação suave de fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Formulário de autenticação (Login e Cadastro) */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0288d1;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    color: #0288d1;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #0288d1;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #03a9f4;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0288d1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #03a9f4;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+a {
+    color: #0288d1;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo Principal */
+.content-container {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    display: none;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Header */
+header {
+    background-color: #0288d1;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Seções de texto */
+h2 {
+    color: #0288d1;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.explanation, .purpose {
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #0277bd;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lista de Livros */
+.livros-list {
+    list-style-type: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.livro-item {
+    background-color: #ffffff;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #0288d1;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.livro-item:hover {
+    transform: translateY(-5px);
+    background-color: #e1f5fe;
+}

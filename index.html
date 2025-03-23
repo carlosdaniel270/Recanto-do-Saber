@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recanto do Saber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div class="auth-container" id="auth-container">
+        <form id="login-form" class="auth-form">
+            <h2>Login</h2>
+            <div class="input-group">
+                <input type="email" id="login-email" placeholder="E-mail" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="login-password" placeholder="Senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+            <p>Não tem conta? <a href="javascript:void(0)" onclick="showCadastro()">Cadastre-se</a></p>
+        </form>
+
+        <!-- Tela de Cadastro -->
+        <form id="cadastro-form" class="auth-form" style="display: none;">
+            <h2>Cadastro</h2>
+            <div class="input-group">
+                <input type="text" id="cadastro-nome" placeholder="Nome Completo" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="cadastro-email" placeholder="E-mail" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="cadastro-senha" placeholder="Senha" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="cadastro-confirmar-senha" placeholder="Confirmar Senha" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+            <p>Já tem uma conta? <a href="javascript:void(0)" onclick="showLogin()">Faça login</a></p>
+        </form>
+    </div>
+
+    <!-- Conteúdo Principal (Oculto até login bem-sucedido) -->
+    <div class="content-container" id="content-container" style="display: none;">
+        <header>
+            <h1>Recanto do Saber</h1>
+        </header>
+
+        <!-- O que é um livro -->
+        <section class="explanation">
+            <h2>O que é um Livro?</h2>
+            <p>
+                Um livro é uma coleção de páginas, geralmente feitas de papel, que contém textos, imagens ou ambos. Ele serve como um meio de transmissão de conhecimento, histórias e informações.
+            </p>
+        </section>
+
+        <!-- Para que serve um livro -->
+        <section class="purpose">
+            <h2>Para que Serve um Livro?</h2>
+            <p>
+                A princípio, pode ser bastante difícil responder à pergunta: afinal, para que serve um livro? Isso porque, enquanto algumas pessoas gostam de ler para ampliar seus conhecimentos e conhecer diversos pontos de vista, por exemplo, outras gostam de descobrir novas histórias, diferentes universos e personagens encantadores! De fato, muitas pessoas não veem a hora de chegar em casa para apreciar uma boa leitura, não é mesmo? 😍 E outros não conseguem nem esperar por esse momento: começam a ler ainda durante o trajeto, seja no trem, no ônibus ou no metrô! Tem gente que até tira férias e passa os dias lendo obras famosas, livros de poesia ou de grandes escritores. Outros, aproveitam a própria viagem para colocar a leitura em dia. Alguns até levam uma mala cheinha de livros, só para ter a companhia deles durante o descanso! E há ainda aqueles que leem por obrigação, seja para uma prova ou um concurso. Muitas profissões também estão intimamente ligadas ao hábito da leitura. Além dos próprios escritores, os jornalistas, repórteres e cronistas, por exemplo, precisam estar bem informados sobre os últimos acontecimentos do país e do mundo. Já os atores e atrizes, precisam ler os roteiros e memorizar suas falas. 
+        </section>
+
+        <!-- Lista de 70 Livros -->
+        <section class="book-list">
+            <h2>Melhores Livros</h2>
+            <ul class="livros-list">
+                <li class="livro-item">1. Dom Casmurro - Machado de Assis</li>
+                <li class="livro-item">2. Grande Sertão: Veredas - João Guimarães Rosa</li>
+                <li class="livro-item">3. O Primo Basílio - José de Alencar</li>
+                <li class="livro-item">4. O Corvo - Edgar Allan Poe</li>
+                <li class="livro-item">5. A Moreninha - Joaquim Manuel de Macedo</li>
+                <!-- Continue até o livro 70 -->
+                <li class="livro-item">6. O Código Da Vinci - Dan Brown</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // Função para alternar entre tela de login e cadastro
+        function showCadastro() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('cadastro-form').style.display = 'block';
+        }
+
+        function showLogin() {
+            document.getElementById('cadastro-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+
+        // Função de login simples (substituir com backend real)
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Simulando login bem-sucedido
+            alert("Login realizado com sucesso!");
+            document.getElementById('auth-container').style.display = 'none';
+            document.getElementById('content-container').style.display = 'block';
+        });
+
+        // Função de cadastro simples (substituir com backend real)
+        document.getElementById('cadastro-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('cadastro-nome').value;
+            const email = document.getElementById('cadastro-email').value;
+            const senha = document.getElementById('cadastro-senha').value;
+            const confirmarSenha = document.getElementById('cadastro-confirmar-senha').value;
+
+            if (senha !== confirmarSenha) {
+                alert("As senhas não coincidem!");
+                return;
+            }
+            alert("Cadastro realizado com sucesso! Faça login.");
+            showLogin();
+        });
+    </script>
+</body>
+</html>
